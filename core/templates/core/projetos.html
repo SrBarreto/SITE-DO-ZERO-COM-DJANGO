@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% block content %}
+<h1>Meus Projetos</h1>
+<div class="row">
+    {% for projeto in projetos %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if projeto.imagem %}
+            <img src="{{ projeto.imagem.url }}" class="card-img-top" alt="{{ projeto.nome }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ projeto.nome }}</h5>
+                <p class="card-text">{{ projeto.descricao }}</p>
+                <a href="{{ projeto.link }}" target="_blank" class="btn btn-primary">Ver Projeto</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

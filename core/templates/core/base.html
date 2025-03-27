@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site do Roger Barreto</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+    <!-- Adicione Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Adicione Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex align-items-center justify-content-between">
+            <img src="{% static 'core/images/python_logo.png' %}" alt="Python Logo" class="img-fluid" style="height: 50px;">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'index' %}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'sobre' %}">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'ver_imagens' %}">Ver Imagens</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'projetos' %}">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'adicionar_projeto' %}">Adicionar Projeto</a></li>
+                </ul>
+            </nav>
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/rogerbarreto" target="_blank" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/rogerbarreto" target="_blank" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:rogerbarreto@example.com" class="text-white mx-2"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+    <main class="container my-4">
+        {% block content %}{% endblock %}
+    </main>
+    <!-- Adicione Bootstrap JS e Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
